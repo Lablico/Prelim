@@ -17,6 +17,9 @@ paid = input("Have you paid the fee? (Y/N): ").strip().lower()
 if paid != 'y':
     print("Please complete your payment first.")
     exit()
+else:
+    invoice_id = f"INV{datetime.now().strftime('%Y%m%d%H%M%S')}"
+    print(f"Payment confirmed. Your invoice ID is: {invoice_id}")
 
 csv_path = "../data/students.csv"
 with open(csv_path, "a", newline='') as csvfile:
